@@ -1,18 +1,18 @@
-import {useAppDispatch} from '@/hooks/useRedux';
-import {ThemeActions} from '@/redux/reducers/themeReducer';
-import React, {FC, useEffect} from 'react';
-import {Text, View} from 'react-native';
+import { useLoginQuery } from '@/redux/services/auth/authService';
+import React, { FC } from 'react';
+import { Text, View } from 'react-native';
 
 export const Login: FC<{}> = () => {
-  const dispatch = useAppDispatch();
+    const { data, isFetching, isLoading } = useLoginQuery({ email: 'tvhoai241223@gmail.com', password: 'admin' });
 
-  useEffect(() => {
-    dispatch(ThemeActions.setTheme('dark'));
-  }, []);
+    if (isLoading) return <Text>Loading...</Text>;
+    if (!data) return <Text>Missing post!</Text>;
 
-  return (
-    <View>
-      <Text>Login</Text>
-    </View>
-  );
+    return (
+        <View>
+            <Text>
+                {JSON.stringify(data)} {isFetching ? '...refetching' : ''}
+            </Text>
+        </View>
+    );
 };

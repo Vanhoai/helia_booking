@@ -1,24 +1,44 @@
-import {apiService} from '../apiService';
-import {Auth} from './type';
+import { apiService } from '../apiService';
+import { Auth } from './type';
+
+type Payload = {
+    email: string;
+    password: string;
+};
 
 export const authApi = apiService.injectEndpoints({
-  endpoints: builder => ({
-    login: builder.query<Auth, void>({
-      query: body => ({
-        url: '/auth/login',
-        method: 'POST',
-        body,
-      }),
-      keepUnusedDataFor: 0,
+    endpoints: (builder) => ({
+        login: builder.query<Auth, Payload>({
+            query: (args) => {
+                const { email, password } = args;
+                return {
+                    url: '/auth/login',
+                    method: 'POST',
+                    body: {
+                        email,
+                        password,
+                    },
+                };
+            },
+            transformResponse: (response: Auth) => {
+                return response;
+            },
+            keepUnusedDataFor: 0,
+        }),
+        register: builder.query<Auth, Payload>({
+            query: (args) => {
+                const { email, password } = args;
+                return {
+                    url: '/auth/register',
+                    method: 'POST',
+                    body: {
+                        email,
+                        password,
+                    },
+                };
+            },
+        }),
     }),
-    register: builder.query<Auth, void>({
-      query: body => ({
-        url: '/auth/register',
-        method: 'POST',
-        body,
-      }),
-    }),
-  }),
 });
 
-export const {useLoginQuery, useRegisterQuery} = authApi;
+export const { useLoginQuery, useRegisterQuery } = authApi;

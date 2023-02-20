@@ -14,7 +14,7 @@
       "@/navigation": ["navigation"],
       "@/redux": ["redux"],
       "@/screens": ["screens"],
-      "@/themes": ["themes"],
+      "@/theme": ["theme"],
       "@/utils": ["utils"],
 
       "@/assets/*": ["assets/*"],
@@ -23,7 +23,7 @@
       "@/navigation/*": ["navigation/*"],
       "@/screens/*": ["screens/*"],
       "@/redux/*": ["redux/*"],
-      "@/themes/*": ["themes/*"],
+      "@/theme/*": ["theme/*"],
       "@/utils/*": ["utils/*"]
     },          
     "target": "esnext",

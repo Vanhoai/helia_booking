@@ -1,3 +1,6 @@
 export interface Auth {
-  token: string;
+    error: boolean;
+    responseTimestamp: Date;
+    statusCode: number;
+    data: {};
 }
