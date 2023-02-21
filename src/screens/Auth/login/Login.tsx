@@ -1,6 +1,6 @@
-import { TextField } from '@/shared';
+import { Container } from '@/shared';
 import React, { FC } from 'react';
 
 export const Login: FC<{}> = () => {
-    return <TextField fontFamily="medium">{'Hello World'}</TextField>;
+    return <Container></Container>;
 };
