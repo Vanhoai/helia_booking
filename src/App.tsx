@@ -17,7 +17,6 @@ const App = () => {
                     }}
                 >
                     <RootNavigation />
-                    hjhhkjhhkh
                 </SafeAreaProvider>
             </PersistGate>
         </Provider>
