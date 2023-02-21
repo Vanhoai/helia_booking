@@ -5,19 +5,6 @@ import { Provider } from 'react-redux';
 import { RootNavigation } from '@/navigation';
 import { persistor, store } from 'redux/store';
 import './i18n';
-import { useAppSelector } from 'store/store';
-import { View } from 'react-native';
-
-const Container = () => {
-    const loading = useAppSelector((state) => state.auth.isLoading);
-
-    return (
-        <React.Fragment>
-            {loading && <View />}
-            <App />
-        </React.Fragment>
-    );
-};
 
 const App = () => {
     return (
@@ -36,4 +23,4 @@ const App = () => {
     );
 };
 
-export default Container;
+export default App;
