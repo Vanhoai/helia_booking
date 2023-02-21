@@ -8,8 +8,8 @@ module.exports = {
                 extensions: ['.ts', '.tsx', '.js', '.json'],
                 alias: {
                     '@/assets': './src/assets',
-                    '@/components': './src/components',
                     '@/hooks': './src/hooks',
+                    '@/shared': './src/shared',
                     '@/navigation': './src/navigation',
                     '@/redux': './src/redux',
                     '@/screens': './src/screens',

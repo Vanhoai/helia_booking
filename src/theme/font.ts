@@ -117,8 +117,8 @@ export const font: Font = {
 };
 
 export const fontFamilySetup = {
-    bold: 'Inter-Bold',
-    medium: 'Inter-Medium',
-    regular: 'Inter-Light',
-    light: 'Inter-Regular',
+    bold: 'WorkSans-Bold',
+    medium: 'WorkSans-Medium',
+    regular: 'WorkSans-Light',
+    light: 'WorkSans-Regular',
 };
