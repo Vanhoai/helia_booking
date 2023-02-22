@@ -17,3 +17,9 @@ export type StateAuth = {
     token: string;
     user: any;
 };
+
+export type StateResponse<T> = {
+    code: number;
+    message: string;
+    data: T;
+};

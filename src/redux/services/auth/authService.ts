@@ -1,18 +1,24 @@
+import { StateResponse } from '@/redux/common/types';
 import { apiService } from '../apiService';
-import { Auth } from './type';
+import { AuthPayload, AuthResponse } from './type';
 
-type Payload = {
-    email: string;
-    password: string;
-};
+interface Response {
+    error: boolean;
+    responseTimestamp: Date;
+    statusCode: number;
+    data: {};
+}
 
 export const authApi = apiService.injectEndpoints({
     endpoints: (builder) => ({
-        login: builder.query<Auth, Payload>({
+        login: builder.mutation<Response, AuthPayload>({
             query: (args) => {
                 const { email, password } = args;
                 return {
                     url: '/auth/login',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
                     method: 'POST',
                     body: {
                         email,
@@ -20,12 +26,8 @@ export const authApi = apiService.injectEndpoints({
                     },
                 };
             },
-            transformResponse: (response: Auth) => {
-                return response;
-            },
-            keepUnusedDataFor: 0,
         }),
-        register: builder.query<Auth, Payload>({
+        register: builder.mutation<StateResponse<AuthResponse>, AuthPayload>({
             query: (args) => {
                 const { email, password } = args;
                 return {
@@ -41,4 +43,4 @@ export const authApi = apiService.injectEndpoints({
     }),
 });
 
-export const { useLoginQuery, useRegisterQuery } = authApi;
+export const { useLoginMutation, useRegisterMutation } = authApi;
