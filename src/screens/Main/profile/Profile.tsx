@@ -1,10 +1,12 @@
-import React, {FC} from 'react';
-import {Text, View} from 'react-native';
+import React, { FC } from 'react';
+import { Container, SafeArea, TextField } from '@/shared';
 
 export const Profile: FC<{}> = () => {
-  return (
-    <View>
-      <Text>Profile</Text>
-    </View>
-  );
+    return (
+        <SafeArea>
+            <Container>
+                <TextField>Search</TextField>
+            </Container>
+        </SafeArea>
+    );
 };

@@ -1,7 +1,9 @@
 export const routes = {
-  login: 'LOGIN',
-  register: 'REGISTER',
-  home: 'HOME',
-  profile: 'PROFILE',
-  bottom: 'BOTTOM',
+    login: 'LOGIN',
+    register: 'REGISTER',
+    home: 'HOME',
+    search: 'SEARCH',
+    booking: 'BOOKING',
+    profile: 'PROFILE',
+    bottom: 'BOTTOM',
 };

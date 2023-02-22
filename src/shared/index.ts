@@ -6,3 +6,5 @@ export * from './Progress';
 export * from './StatusBar';
 export * from './TextForm';
 export * from './Switch';
+export * from './SafeArea';
+export * from './Loading';

@@ -14,6 +14,7 @@ export type StateLoadMore = {
 
 export type StateAuth = {
     isLogin: boolean;
+    deviceToken: string;
     token: string;
     user: any;
 };

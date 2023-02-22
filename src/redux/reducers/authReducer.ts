@@ -1,17 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-type AuthState = {
-    token?: string;
-};
-
-const defaultAuthState: AuthState = {
-    token: undefined,
-};
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { stateAuth } from '../common/initState';
+import { StateAuth } from '../common/types';
 
 const authSlice = createSlice({
     name: 'auth',
-    initialState: defaultAuthState,
-    reducers: {},
+    initialState: stateAuth,
+    reducers: {
+        setDeviceToken(state: StateAuth, action: PayloadAction<string>) {
+            state.deviceToken = action.payload;
+        },
+    },
 });
 
 export const AuthActions = authSlice.actions;

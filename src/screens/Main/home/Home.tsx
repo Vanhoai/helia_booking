@@ -1,10 +1,12 @@
-import React, {FC} from 'react';
-import {Text, View} from 'react-native';
+import { Container, SafeArea, TextField } from '@/shared';
+import React, { FC } from 'react';
 
 export const Home: FC<{}> = () => {
-  return (
-    <View>
-      <Text>Home</Text>
-    </View>
-  );
+    return (
+        <SafeArea>
+            <Container flex>
+                <TextField>Home</TextField>
+            </Container>
+        </SafeArea>
+    );
 };

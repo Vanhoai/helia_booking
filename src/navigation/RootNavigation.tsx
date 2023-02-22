@@ -6,7 +6,7 @@ import { AuthNavigation } from './AuthNavigation';
 import { useAppSelector } from '@/hooks';
 
 export const RootNavigation = () => {
-    const isLogin: Boolean = useAppSelector((state) => state.root.loading.isLoading);
+    const isLogin: Boolean = useAppSelector((state) => state.root.auth.isLogin);
 
     return (
         <NavigationContainer ref={navigationRef}>

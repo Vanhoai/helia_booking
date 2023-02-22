@@ -1,10 +1,12 @@
-import {View, Text} from 'react-native';
-import React, {FC} from 'react';
+import { Container, SafeArea, TextField } from '@/shared';
+import { FC } from 'react';
 
 export const Booking: FC<{}> = () => {
-  return (
-    <View>
-      <Text>Booking</Text>
-    </View>
-  );
+    return (
+        <SafeArea>
+            <Container flex>
+                <TextField>Booking</TextField>
+            </Container>
+        </SafeArea>
+    );
 };
