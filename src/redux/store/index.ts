@@ -5,6 +5,7 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import authReducer from '../reducers/authReducer';
 import { apiService } from '../services/apiService';
+import loadingReducer from '../reducers/loadingReducer';
 
 // config redux-persist
 const persistConfig = {
@@ -19,7 +20,9 @@ const persistConfig = {
 const rootReducer = combineReducers({
     themeApp: themeReducer,
     auth: authReducer,
+    loading: loadingReducer,
 });
+
 const persistedReducer = persistReducer<RootState>(persistConfig, rootReducer);
 
 // store
