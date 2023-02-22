@@ -8,7 +8,7 @@ const AuthStack = createNativeStackNavigator();
 export const AuthNavigation = () => {
     return (
         <AuthStack.Navigator
-            initialRouteName={routes.marker}
+            initialRouteName={routes.splash}
             screenOptions={{
                 headerShown: false,
             }}

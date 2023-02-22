@@ -1,4 +1,4 @@
-import { Container, Image, SafeArea, TextField } from '@/shared';
+import { Button, Container, Image, SafeArea, TextField } from '@/shared';
 import { useTheme } from '@/theme';
 import React, { FC, useState } from 'react';
 import PagerView from 'react-native-pager-view';
@@ -51,19 +51,39 @@ export const Marker: FC<{}> = () => {
                         <ViewOfItem key={index} slide={value} />
                     ))}
                 </PagerView>
-                <Container absolute bottom={100} left={0} right={0} row justifyCenter>
-                    {[0, 1, 2].map((_, index) => {
-                        return (
-                            <Container
-                                key={index}
-                                height={12}
-                                width={pageCurrent === index ? 30 : 12}
-                                radius={5}
-                                backgroundColor={pageCurrent === index ? colors.primary : colors.greyColor}
-                                marginHorizontal={2}
-                            />
-                        );
-                    })}
+                <Container absolute bottom={0} left={0} right={0} justifyCenter>
+                    <Container row justifyCenter>
+                        {[0, 1, 2].map((_, index) => {
+                            return (
+                                <Container
+                                    key={index}
+                                    height={12}
+                                    width={pageCurrent === index ? 30 : 12}
+                                    radius={5}
+                                    backgroundColor={pageCurrent === index ? colors.primaryColor : colors.greyColor}
+                                    marginHorizontal={2}
+                                />
+                            );
+                        })}
+                    </Container>
+
+                    <Container padding={20}>
+                        <Button title="Next" radius={30} backgroundColor={colors.primaryColor} height={56} />
+                        <Container height={12} />
+                        <Button
+                            radius={30}
+                            backgroundColor={colors.backgroundGreen}
+                            height={56}
+                            justifyCenter
+                            alignCenter
+                        >
+                            <Container justifyCenter alignCenter flex>
+                                <TextField color={colors.primaryColor} size={16} fontFamily="bold">
+                                    Skip
+                                </TextField>
+                            </Container>
+                        </Button>
+                    </Container>
                 </Container>
             </Container>
         </SafeArea>
