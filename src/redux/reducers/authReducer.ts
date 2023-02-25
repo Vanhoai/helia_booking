@@ -9,6 +9,10 @@ const authSlice = createSlice({
         setDeviceToken(state: StateAuth, action: PayloadAction<string>) {
             state.deviceToken = action.payload;
         },
+        loginSuccess(state: StateAuth, action: PayloadAction<string>) {
+            state.isLogin = true;
+            state.token = action.payload;
+        },
     },
 });
 

@@ -1,7 +1,12 @@
+import { routes } from '@/navigation';
+import { BottomTabParamsList } from '@/navigation/BottomNavigation';
 import { Container, SafeArea, TextField } from '@/shared';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import React, { FC } from 'react';
 
-export const Home: FC<{}> = () => {
+type HomeProps = BottomTabScreenProps<BottomTabParamsList, routes.home>;
+
+export const Home: FC<{}> = ({}) => {
     return (
         <SafeArea>
             <Container flex>

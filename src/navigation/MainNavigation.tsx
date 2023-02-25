@@ -1,18 +1,22 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import React from 'react';
-import {BottomTabsNavigation} from './BottomNavigation';
-import {routes} from './routes';
+import React, { FC } from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { BottomTabsNavigation } from './BottomNavigation';
+import { EditProfile } from '@/screens/Main';
+import { routes } from './routes';
+import { MainStackParamList } from './type';
 
-const MainStack = createNativeStackNavigator();
+const MainStack = createNativeStackNavigator<MainStackParamList>();
 
-export const MainNavigation = () => {
-  return (
-    <MainStack.Navigator
-      initialRouteName={routes.bottom}
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <MainStack.Screen name={routes.bottom} component={BottomTabsNavigation} />
-    </MainStack.Navigator>
-  );
+export const MainNavigation: FC<{}> = ({}) => {
+    return (
+        <MainStack.Navigator
+            initialRouteName={routes.bottom}
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+            <MainStack.Screen name={routes.bottom} component={BottomTabsNavigation} />
+            <MainStack.Screen name={routes.editProfile} component={EditProfile} />
+        </MainStack.Navigator>
+    );
 };

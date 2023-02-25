@@ -1,5 +1,5 @@
 import { useAppDispatch } from '@/hooks';
-import { LoadingActions } from '@/redux/reducers/loadingReducer';
+import { AuthActions } from '@/redux/reducers/authReducer';
 import { Button, Container, SafeArea } from '@/shared';
 import React, { FC } from 'react';
 
@@ -7,7 +7,7 @@ export const Login: FC<{}> = () => {
     const dispatch = useAppDispatch();
 
     const onPress = () => {
-        dispatch(LoadingActions.setIsLoading(true));
+        dispatch(AuthActions.loginSuccess(''));
     };
 
     return (

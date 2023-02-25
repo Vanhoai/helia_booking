@@ -20,7 +20,7 @@ const ViewOfItem: FC<ViewOfItemProps> = ({ slide }) => {
                     lineHeight={30}
                     marginTop={24}
                     marginBottom={12}
-                    fontFamily="bold"
+                    fontFamily="medium"
                     style={{ textAlign: 'center' }}
                 >
                     {slide.title}
@@ -36,6 +36,7 @@ const ViewOfItem: FC<ViewOfItemProps> = ({ slide }) => {
 export const Marker: FC<{}> = () => {
     const { colors } = useTheme();
     const [pageCurrent, setPageCurrent] = useState<number>(0);
+
     return (
         <SafeArea>
             <Container flex>
@@ -60,29 +61,11 @@ export const Marker: FC<{}> = () => {
                                     height={12}
                                     width={pageCurrent === index ? 30 : 12}
                                     radius={5}
-                                    backgroundColor={pageCurrent === index ? colors.primaryColor : colors.greyColor}
+                                    backgroundColor={pageCurrent === index ? colors.primary : colors.secondaryText}
                                     marginHorizontal={2}
                                 />
                             );
                         })}
-                    </Container>
-
-                    <Container padding={20}>
-                        <Button title="Next" radius={30} backgroundColor={colors.primaryColor} height={56} />
-                        <Container height={12} />
-                        <Button
-                            radius={30}
-                            backgroundColor={colors.backgroundGreen}
-                            height={56}
-                            justifyCenter
-                            alignCenter
-                        >
-                            <Container justifyCenter alignCenter flex>
-                                <TextField color={colors.primaryColor} size={16} fontFamily="bold">
-                                    Skip
-                                </TextField>
-                            </Container>
-                        </Button>
                     </Container>
                 </Container>
             </Container>

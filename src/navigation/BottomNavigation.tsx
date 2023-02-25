@@ -1,13 +1,24 @@
 import { Booking, Home, Profile, Search } from '@/screens/Main';
 import { Button, Container } from '@/shared';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React from 'react';
-import { Animated, StyleSheet } from 'react-native';
-import IonIcons from 'react-native-vector-icons/Ionicons';
-import { routes } from './routes';
 import { useTheme } from '@/theme';
+import { BottomTabBarButtonProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React, { FC } from 'react';
+import { Animated } from 'react-native';
+import IonIcons from 'react-native-vector-icons/Ionicons';
+import { MainStackParamList } from './MainNavigation';
+import { routes } from './routes';
 
-const Tab = createBottomTabNavigator();
+export type BottomTabsNavigationProps = NativeStackScreenProps<MainStackParamList, routes.bottom>;
+
+export type BottomTabParamsList = {
+    [routes.home]: undefined;
+    [routes.search]: undefined;
+    [routes.booking]: undefined;
+    [routes.profile]: undefined;
+};
+const Tab = createBottomTabNavigator<BottomTabParamsList>();
+type BottomType = keyof BottomTabParamsList;
 
 const bottoms = [
     {
@@ -40,7 +51,7 @@ const bottoms = [
     },
 ];
 
-export const BottomTabsNavigation = () => {
+export const BottomTabsNavigation: FC<BottomTabsNavigationProps> = ({}) => {
     const { colors } = useTheme();
 
     const TabBarButton = (props: any) => {
@@ -82,8 +93,8 @@ export const BottomTabsNavigation = () => {
                 return (
                     <Tab.Screen
                         key={index}
-                        name={route.route}
-                        component={route.component}
+                        name={route.route as BottomType}
+                        component={route.component as any}
                         options={{
                             tabBarLabel: route.label,
                             tabBarShowLabel: false,
@@ -104,11 +115,3 @@ export const BottomTabsNavigation = () => {
         </Tab.Navigator>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

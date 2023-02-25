@@ -23,6 +23,7 @@ const rootReducer = combineReducers({
     loading: loadingReducer,
 });
 
+type RootState = ReturnType<typeof rootReducer>;
 const persistedReducer = persistReducer<RootState>(persistConfig, rootReducer);
 
 // store
@@ -39,5 +40,4 @@ export const store = configureStore({
         }).concat(apiService.middleware),
 });
 
-export type RootState = ReturnType<typeof rootReducer>;
 export const persistor = persistStore(store);

@@ -4,7 +4,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import { Provider } from 'react-redux';
 import { RootNavigation } from '@/navigation';
 import { persistor, store } from 'redux/store';
-import { useAppDispatch, useAppSelector, useFCM } from '@/hooks';
+import { RootState, useAppDispatch, useAppSelector, useFCM } from '@/hooks';
 import { AuthActions } from './redux/reducers/authReducer';
 import { Loading } from './shared';
 import './i18n';
@@ -12,7 +12,7 @@ import './i18n';
 const App: React.FC<{}> = () => {
     const fcm = useFCM();
     const dispatch = useAppDispatch();
-    const loading: Boolean = useAppSelector((state) => state.root.loading.isLoading);
+    const loading: Boolean = useAppSelector((state: RootState) => state.root.loading.isLoading);
 
     useEffect(() => {
         fcm.requestUserPermission();

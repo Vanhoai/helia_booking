@@ -1,12 +1,14 @@
 import React, { FC, useEffect } from 'react';
 import { Container, TextField } from '@/shared';
-import { navigate } from '@/navigation/NavigationService';
-import { routes } from '@/navigation';
+import { routes, SplashProps } from '@/navigation';
+import { useNavigation } from '@react-navigation/native';
 
 export const Splash: FC<{}> = () => {
+    const navigation = useNavigation<SplashProps['navigation']>();
+
     useEffect(() => {
         const timer = setTimeout(() => {
-            navigate(routes.marker);
+            navigation.navigate(routes.marker);
         }, 2000);
 
         return () => {

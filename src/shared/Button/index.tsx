@@ -94,7 +94,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
             {children ? (
                 children
             ) : (
-                <Container row alignSelf="center">
+                <Container row alignCenter justifyCenter backgroundColor="#000">
                     {leftIcon && _renderIcon()}
                     {loading && (
                         <Container marginRight={8}>
@@ -102,9 +102,11 @@ export const Button: React.FC<ButtonProps> = (props) => {
                         </Container>
                     )}
                     {title && (
-                        <TextField color={type === 'primary' ? 'white' : 'primary'} size={14} {...titleProps}>
-                            {title}
-                        </TextField>
+                        <Container backgroundColor="#ccc">
+                            <TextField color={type === 'primary' ? 'white' : 'primary'} size={14} {...titleProps}>
+                                {title}
+                            </TextField>
+                        </Container>
                     )}
                     {rightIcon && _renderIcon(true)}
                 </Container>
