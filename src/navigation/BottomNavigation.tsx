@@ -1,13 +1,13 @@
 import { Booking, Home, Profile, Search } from '@/screens/Main';
 import { Button, Container } from '@/shared';
 import { useTheme } from '@/theme';
-import { BottomTabBarButtonProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { FC } from 'react';
 import { Animated } from 'react-native';
 import IonIcons from 'react-native-vector-icons/Ionicons';
-import { MainStackParamList } from './MainNavigation';
 import { routes } from './routes';
+import { MainStackParamList } from './type';
 
 export type BottomTabsNavigationProps = NativeStackScreenProps<MainStackParamList, routes.bottom>;
 
@@ -65,7 +65,7 @@ export const BottomTabsNavigation: FC<BottomTabsNavigationProps> = ({}) => {
                         <IonIcons
                             name={focused ? route.activeIcon : route.inactiveIcon}
                             size={24}
-                            color={focused ? colors.primaryColor : colors.textGreyColor}
+                            color={focused ? colors.primary : colors.secondaryText}
                         />
                     </Animated.View>
                 </Container>

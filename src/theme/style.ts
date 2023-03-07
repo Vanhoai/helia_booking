@@ -2,7 +2,7 @@ import { colors, ThemeColor } from './color';
 import { font, Font } from './font';
 import { normalize, Normalize } from './normalize';
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { useAppSelector } from '@/hooks/useRedux';
+import { RootState, useAppSelector } from '@/hooks/useRedux';
 import keys from 'lodash.keys';
 import { useMemo } from 'react';
 import { baseStyles, BaseStyles } from './baseStyle';
@@ -67,7 +67,7 @@ export const makeStyles =
         styles: StyleThemFn<Props, T> | T | NamedStyles<T> | NamedStylesFn<Props, T>
     ) => {
         return (props?: Props) => {
-            const { theme: themeStore } = useAppSelector((state) => state.root.themeApp);
+            const { theme: themeStore } = useAppSelector((state: RootState) => state.root.themeApp);
             return useMemo<{
                 [P in keyof ReturnNameStyled<T, BaseStyles>]: {};
             }>(
@@ -77,7 +77,7 @@ export const makeStyles =
                         ...createStyle(
                             typeof styles === 'function'
                                 ? styles({
-                                      ...theme[themeStore || 'light'], // here
+                                      ...theme[themeStore || 'light'],
                                   })
                                 : styles,
                             props

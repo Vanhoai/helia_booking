@@ -71,7 +71,7 @@ export const Container = ({
 }: BlockProps) => {
     const insets = useSafeAreaInsets();
 
-    const blockStyles: {} = [
+    const containerProps: {} = [
         isPaddingIos && {
             paddingBottom: Platform.OS === 'ios' ? insets.bottom : normalize.m(20),
         },
@@ -138,7 +138,7 @@ export const Container = ({
     ];
 
     return (
-        <View style={blockStyles} {...rest}>
+        <View style={containerProps} {...rest}>
             {children}
         </View>
     );

@@ -1,6 +1,5 @@
 export enum routes {
     splash = 'SPLASH',
-    marker = 'MARKER',
     login = 'LOGIN',
     register = 'REGISTER',
     bottom = 'BOTTOM',
