@@ -3,9 +3,10 @@ import themeReducer from '../reducers/themeReducer';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
+import createSagaMiddleware from '@redux-saga/core';
 import authReducer from '../reducers/authReducer';
-import { apiService } from '../services/apiService';
 import loadingReducer from '../reducers/loadingReducer';
+import rootSaga from '../sagas/rootSaga';
 
 // config redux-persist
 const persistConfig = {
@@ -26,18 +27,21 @@ const rootReducer = combineReducers({
 type RootState = ReturnType<typeof rootReducer>;
 const persistedReducer = persistReducer<RootState>(persistConfig, rootReducer);
 
+const sagaMiddleware = createSagaMiddleware();
+
 // store
 export const store = configureStore({
     reducer: {
         root: persistedReducer,
-        [apiService.reducerPath]: apiService.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
-        }).concat(apiService.middleware),
+        }).concat(sagaMiddleware),
 });
+
+sagaMiddleware.run(rootSaga);
 
 export const persistor = persistStore(store);
