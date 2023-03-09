@@ -1,6 +1,6 @@
+import { routes } from '@/config';
 import { CommonActions, NavigationContainerRef, StackActions } from '@react-navigation/native';
 import React from 'react';
-import { routes } from './routes';
 
 export const navigationRef = React.createRef<NavigationContainerRef<any>>();
 

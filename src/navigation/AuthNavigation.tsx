@@ -1,10 +1,9 @@
+import { routes } from '@/config';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Login, Register, Splash, Marker } from '../screens/Auth';
-import { routes } from './routes';
-import { AuthStackParamList } from './type';
+import { Login, Register, Splash } from '../screens/Auth';
 
-const AuthStack = createNativeStackNavigator<AuthStackParamList>();
+const AuthStack = createNativeStackNavigator();
 
 export const AuthNavigation = () => {
     return (
@@ -15,7 +14,6 @@ export const AuthNavigation = () => {
             }}
         >
             <AuthStack.Screen name={routes.splash} component={Splash} />
-            <AuthStack.Screen name={routes.marker} component={Marker} />
             <AuthStack.Screen name={routes.login} component={Login} />
             <AuthStack.Screen name={routes.register} component={Register} />
         </AuthStack.Navigator>

@@ -1,11 +1,12 @@
+// import { normalize } from '@utils/responsive';
 import React from 'react';
 import { isNumber } from 'lodash';
 import { Platform, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { handleMargin, handlePadding, handleRound, handleSquare } from '../function';
-import styles from './style';
-import { BlockProps } from './type';
-import { normalize } from 'theme';
+import { handleMargin, handlePadding, handleRound, handleSquare } from '@/shared/function';
+import styles from './styles';
+import { ContainerProps } from './types';
+import { normalize } from '@/theme';
 
 export const Container = ({
     flex,
@@ -68,10 +69,10 @@ export const Container = ({
     style,
     opacity,
     ...rest
-}: BlockProps) => {
+}: ContainerProps) => {
     const insets = useSafeAreaInsets();
 
-    const containerProps: {} = [
+    const blockStyles: {} = [
         isPaddingIos && {
             paddingBottom: Platform.OS === 'ios' ? insets.bottom : normalize.m(20),
         },
@@ -138,7 +139,7 @@ export const Container = ({
     ];
 
     return (
-        <View style={containerProps} {...rest}>
+        <View style={blockStyles} {...rest}>
             {children}
         </View>
     );

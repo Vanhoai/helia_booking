@@ -2,10 +2,9 @@ import React, { FC } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { BottomTabsNavigation } from './BottomNavigation';
 import { EditProfile } from '@/screens/Main';
-import { routes } from './routes';
-import { MainStackParamList } from './type';
+import { routes } from '@/config';
 
-const MainStack = createNativeStackNavigator<MainStackParamList>();
+const MainStack = createNativeStackNavigator();
 
 export const MainNavigation: FC<{}> = ({}) => {
     return (

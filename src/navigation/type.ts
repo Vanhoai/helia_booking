@@ -1,5 +1,5 @@
+import { routes } from '@/config';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { routes } from './routes';
 
 export type AuthStackParamList = {
     [routes.splash]: undefined;

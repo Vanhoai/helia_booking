@@ -1,11 +1,9 @@
 import { Container, TextField } from '@/shared';
 import { ThemeColors, useTheme } from '@/theme';
-
 import React from 'react';
 import { ActivityIndicator, Pressable, StyleSheet } from 'react-native';
-
 import { createDefaultStyle, handleGutter, isUndefined } from '../utils';
-import { ButtonProps } from './type';
+import { ButtonProps } from './types';
 
 export const Button: React.FC<ButtonProps> = (props) => {
     const { colors } = useTheme();
@@ -94,7 +92,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
             {children ? (
                 children
             ) : (
-                <Container row alignCenter justifyCenter backgroundColor="#000">
+                <Container row alignSelf="center">
                     {leftIcon && _renderIcon()}
                     {loading && (
                         <Container marginRight={8}>
@@ -102,11 +100,9 @@ export const Button: React.FC<ButtonProps> = (props) => {
                         </Container>
                     )}
                     {title && (
-                        <Container backgroundColor="#ccc">
-                            <TextField color={type === 'primary' ? 'white' : 'primary'} size={14} {...titleProps}>
-                                {title}
-                            </TextField>
-                        </Container>
+                        <TextField color={type === 'primary' ? 'white' : 'primary'} size={14} {...titleProps}>
+                            {title}
+                        </TextField>
                     )}
                     {rightIcon && _renderIcon(true)}
                 </Container>

@@ -1,24 +1,13 @@
+import { routes } from '@/config';
 import { Booking, Home, Profile, Search } from '@/screens/Main';
 import { Button, Container } from '@/shared';
 import { useTheme } from '@/theme';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { FC } from 'react';
 import { Animated } from 'react-native';
 import IonIcons from 'react-native-vector-icons/Ionicons';
-import { routes } from './routes';
-import { MainStackParamList } from './type';
 
-export type BottomTabsNavigationProps = NativeStackScreenProps<MainStackParamList, routes.bottom>;
-
-export type BottomTabParamsList = {
-    [routes.home]: undefined;
-    [routes.search]: undefined;
-    [routes.booking]: undefined;
-    [routes.profile]: undefined;
-};
-const Tab = createBottomTabNavigator<BottomTabParamsList>();
-type BottomType = keyof BottomTabParamsList;
+const Tab = createBottomTabNavigator();
 
 const bottoms = [
     {
@@ -51,7 +40,7 @@ const bottoms = [
     },
 ];
 
-export const BottomTabsNavigation: FC<BottomTabsNavigationProps> = ({}) => {
+export const BottomTabsNavigation: FC<{}> = ({}) => {
     const { colors } = useTheme();
 
     const TabBarButton = (props: any) => {
@@ -93,7 +82,7 @@ export const BottomTabsNavigation: FC<BottomTabsNavigationProps> = ({}) => {
                 return (
                     <Tab.Screen
                         key={index}
-                        name={route.route as BottomType}
+                        name={route.route}
                         component={route.component as any}
                         options={{
                             tabBarLabel: route.label,
