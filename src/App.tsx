@@ -1,12 +1,11 @@
+import { RootState, useAppDispatch, useAppSelector, useFCM } from '@/hooks';
+import { RootNavigation } from '@/navigation';
 import React, { useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { PersistGate } from 'redux-persist/lib/integration/react';
 import { Provider } from 'react-redux';
-import { RootNavigation } from '@/navigation';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 import { persistor, store } from 'redux/store';
-import { RootState, useAppDispatch, useAppSelector, useFCM } from '@/hooks';
-import { AuthActions } from './redux/reducers/authReducer';
-import { Loading } from './shared';
+import { Loading } from '@/shared';
 import './i18n';
 
 const App: React.FC<{}> = () => {
@@ -18,7 +17,7 @@ const App: React.FC<{}> = () => {
         fcm.requestUserPermission();
         fcm.getDeviceToken()
             .then((token) => {
-                dispatch(AuthActions.setDeviceToken(token));
+                console.log(token);
             })
             .catch((error) => console.log(error));
     }, [fcm, dispatch]);
