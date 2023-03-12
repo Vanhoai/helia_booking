@@ -1,10 +1,17 @@
-import {View, Text} from 'react-native';
-import React, {FC} from 'react';
+import { routes } from '@/navigation';
+import { BottomTabParamsList } from '@/navigation/BottomNavigation';
+import { Container, SafeArea, TextField } from '@/shared';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { FC } from 'react';
+
+type BookingProps = BottomTabScreenProps<BottomTabParamsList, routes.booking>;
 
 export const Booking: FC<{}> = () => {
-  return (
-    <View>
-      <Text>Booking</Text>
-    </View>
-  );
+    return (
+        <SafeArea>
+            <Container flex>
+                <TextField>Booking</TextField>
+            </Container>
+        </SafeArea>
+    );
 };

@@ -14,6 +14,13 @@ export type StateLoadMore = {
 
 export type StateAuth = {
     isLogin: boolean;
-    token: string;
+    accessToken: string;
+    refreshToken: string;
     user: any;
+};
+
+export type StateResponse<T> = {
+    code: number;
+    message: string;
+    data: T;
 };

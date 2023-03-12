@@ -6,6 +6,7 @@ export const stateLoading: StateLoading = {
 
 export const stateAuth: StateAuth = {
     isLogin: false,
-    token: '',
-    user: undefined,
+    accessToken: '',
+    refreshToken: '',
+    user: {},
 };

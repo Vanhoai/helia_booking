@@ -1,7 +1,7 @@
 import { FlexStyle, PressableProps, StyleProp, ViewStyle } from 'react-native';
-import { BlockProps } from '../Container/type';
+import { ContainerProps } from '@/shared/Container/types';
 import { CommonTextProps } from '../TextField/type';
-export type CommonButtonProps = Omit<BlockProps, 'style' | 'hitSlop' | 'children' | 'inset'>;
+export type CommonButtonProps = Omit<ContainerProps, 'style' | 'hitSlop' | 'children' | 'inset'>;
 
 export interface ButtonProps extends PressableProps, CommonButtonProps {
     /**

@@ -1,11 +1,9 @@
 import { Container, TextField } from '@/shared';
 import { ThemeColors, useTheme } from '@/theme';
-
 import React from 'react';
 import { ActivityIndicator, Pressable, StyleSheet } from 'react-native';
-
 import { createDefaultStyle, handleGutter, isUndefined } from '../utils';
-import { ButtonProps } from './type';
+import { ButtonProps } from './types';
 
 export const Button: React.FC<ButtonProps> = (props) => {
     const { colors } = useTheme();

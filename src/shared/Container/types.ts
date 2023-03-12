@@ -2,7 +2,7 @@
 import { ViewProps, ViewStyle } from 'react-native';
 import { DefaultStyleProps } from '../utils';
 
-export interface BlockProps extends DefaultStyleProps, ViewProps {
+export interface ContainerProps extends DefaultStyleProps, ViewProps {
     /**
      * Width of the component
      */

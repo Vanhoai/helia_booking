@@ -1,42 +1,55 @@
 export const colors = {
     dark: {
-        //default don't delete
-        primaryText: '#000000',
-        secondaryText: '#898989',
-        error: '#f02849',
-        inputBG: '#edf4f4',
-        primary: '#1877f2',
-        focus: '#1850f2',
+        primaryText: '#212121',
+        secondaryText: '#717171',
+        error: '#ff5e75',
+        inputBG: '#edfaf2',
+        primary: '#1ab65c',
+        focus: '#53a777',
         background: '#FAFBFC',
         border: '#e4e6eb',
         white: '#FFFFFF',
         disabled: '#a2ccf2',
-        oceanBlue: '#0077b6',
-        veryLightPink: '#bcbcbc',
-        lightBlue: '#96d3f2',
-        trackColor: '#96d3f2',
+        trackColor: '#5cf255',
         placeholder: '#bcbcbc',
+        greenColor: '#53a777',
+        backgroundGrey: '#f5f5f5',
+        backgroundGreen: '#edfaf2',
     },
     light: {
-        //default don't delete
-        primaryText: '#000000',
-        secondaryText: '#898989',
-        error: '#f02849',
-        inputBG: '#edf4f4',
-        primary: '#1877f2',
-        focus: '#1850f2',
+        primaryText: '#212121',
+        secondaryText: '#717171',
+        error: '#ff5e75',
+        inputBG: '#edfaf2',
+        primary: '#1ab65c',
+        focus: '#53a777',
         background: '#FAFBFC',
         border: '#e4e6eb',
         white: '#FFFFFF',
         disabled: '#a2ccf2',
-        oceanBlue: '#0077b6',
-        veryLightPink: '#bcbcbc',
-        lightBlue: '#96d3f2',
-        trackColor: '#96d3f2',
+        trackColor: '#5cf255',
         placeholder: '#bcbcbc',
+        greenColor: '#53a777',
+        backgroundGrey: '#f5f5f5',
+        backgroundGreen: '#edfaf2',
     },
 };
 
-export type Color = 'dark' | 'light';
+export type Color =
+    | 'primaryText'
+    | 'secondaryText'
+    | 'error'
+    | 'inputBG'
+    | 'primary'
+    | 'focus'
+    | 'background'
+    | 'border'
+    | 'white'
+    | 'disabled'
+    | 'trackColor'
+    | 'placeholder'
+    | 'greenColor'
+    | 'backgroundGrey'
+    | 'backgroundGreen';
 
 export type ThemeColor = typeof colors;

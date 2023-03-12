@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { navigationRef } from './NavigationService';
 import { MainNavigation } from './MainNavigation';
 import { AuthNavigation } from './AuthNavigation';
-import { useAppSelector } from '@/hooks';
+import { RootState, useAppSelector } from '@/hooks';
+import { navigationRef } from './NavigationService';
 
 export const RootNavigation = () => {
-    const isLogin: Boolean = useAppSelector((state) => state.root.loading.isLoading);
+    const isLogin: Boolean = useAppSelector((state: RootState) => state.root.auth.isLogin);
 
     return (
         <NavigationContainer ref={navigationRef}>

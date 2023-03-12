@@ -1,10 +1,12 @@
-import {View, Text} from 'react-native';
-import React, {FC} from 'react';
+import { Container, SafeArea, TextField } from '@/shared';
+import React, { FC } from 'react';
 
-export const Search: FC<{}> = () => {
-  return (
-    <View>
-      <Text>Search</Text>
-    </View>
-  );
+export const Search: FC<{}> = ({}) => {
+    return (
+        <SafeArea>
+            <Container flex>
+                <TextField>Search</TextField>
+            </Container>
+        </SafeArea>
+    );
 };

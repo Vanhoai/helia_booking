@@ -1,30 +1,6 @@
 {
-    "extends": "@tsconfig/react-native/tsconfig.json" /* Recommended React Native TSConfig base */,
+    "extends": "@tsconfig/react-native/tsconfig.json",
     "compilerOptions": {
-        /* Visit https://aka.ms/tsconfig.json to read more about this file */
-
-        /* Completeness */
-        "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-        "baseUrl": "./src",
-        "paths": {
-            "@/assets": ["assets"],
-            "@/shared": ["shared"],
-            "@/hooks": ["hooks"],
-            "@/navigation": ["navigation"],
-            "@/redux": ["redux"],
-            "@/screens": ["screens"],
-            "@/theme": ["theme"],
-            "@/utils": ["utils"],
-
-            "@/assets/*": ["assets/*"],
-            "@/shared/*": ["shared/*"],
-            "@/hooks/*": ["hooks/*"],
-            "@/navigation/*": ["navigation/*"],
-            "@/screens/*": ["screens/*"],
-            "@/redux/*": ["redux/*"],
-            "@/theme/*": ["theme/*"],
-            "@/utils/*": ["utils/*"]
-        },
         "target": "esnext",
         "module": "commonjs",
         "lib": ["es2017", "ES2021.String"],
@@ -45,7 +21,32 @@
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "forceConsistentCasingInFileNames": true,
-        "useUnknownInCatchVariables": false /* Skip type checking all .d.ts files. */
+        "useUnknownInCatchVariables": false,
+        "skipLibCheck": true,
+        "baseUrl": "./src",
+        "paths": {
+            "@/assets": ["assets"],
+            "@/shared": ["shared"],
+            "@/hooks": ["hooks"],
+            "@/navigation": ["navigation"],
+            "@/redux": ["redux"],
+            "@/screens": ["screens"],
+            "@/theme": ["theme"],
+            "@/utils": ["utils"],
+            "@/libs": ["libs"],
+            "@/config": ["config"],
+
+            "@/assets/*": ["assets/*"],
+            "@/shared/*": ["shared/*"],
+            "@/hooks/*": ["hooks/*"],
+            "@/navigation/*": ["navigation/*"],
+            "@/screens/*": ["screens/*"],
+            "@/redux/*": ["redux/*"],
+            "@/theme/*": ["theme/*"],
+            "@/utils/*": ["utils/*"],
+            "@/libs/*": ["libs/*"],
+            "@/config/*": ["config/*"]
+        }
     },
     "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }
