@@ -7,8 +7,6 @@ import React, { FC } from 'react';
 import { Animated } from 'react-native';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 
-
-
 const Tab = createBottomTabNavigator();
 const bottoms = [
     {
