@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "969506947092",
+    "project_id": "helia-7027f",
+    "storage_bucket": "helia-7027f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969506947092:android:19f696e3706ec1330a6701",
+        "android_client_info": {
+          "package_name": "com.helia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969506947092-35437miv3en0p757aiq6dh38sp9ui3v5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.helia",
+            "certificate_hash": "633df8e9aa0d3ef49da1f6c24d11ca194d4ab66a"
+          }
+        },
+        {
+          "client_id": "969506947092-0jbqn0ui3kpf717hc9k111kf3l9ab8n3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn1mRmFi6mV36RXW6sESDaGTWPJ21wIK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969506947092-0jbqn0ui3kpf717hc9k111kf3l9ab8n3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
